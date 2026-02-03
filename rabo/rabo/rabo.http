@@ -1,0 +1,6 @@
+@rabo_HostAddress = http://localhost:5291
+
+GET {{rabo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
