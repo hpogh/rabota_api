@@ -1,5 +1,7 @@
+using CollegeSchedule.Services;
 using Microsoft.EntityFrameworkCore;
 using rabo.Data;
+using rabo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,7 @@ $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")}";
 builder.Services.AddDbContext<AppDbContext>(options =>
  options.UseNpgsql(connectionString));
 
+builder.Services.AddScoped<IScheduleService,ScheduleService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
