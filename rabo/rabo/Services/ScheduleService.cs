@@ -126,5 +126,16 @@ namespace rabo.Services
                 Lessons = new List<LessonDto>()
             };
         }
+        public async Task<List<GroupDto>> GetAllGroups()
+        {
+            return await _db.StudentGroups
+                .Select(g => new GroupDto
+                {
+                    Id = g.GroupId,
+                    Name = g.GroupName
+                })
+                .OrderBy(g => g.Name)
+                .ToListAsync();
+        }
     }
 }
