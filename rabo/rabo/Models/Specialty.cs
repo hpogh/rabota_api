@@ -9,6 +9,7 @@ namespace rabo.Models
         [Key]
         [Column("id")]
         public int Id { get; set; }
+
         [Column("name")]
         [Required]
         public string Name { get; set; } = null!;

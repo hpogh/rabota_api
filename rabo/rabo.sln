@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36511.14 d17.14
+VisualStudioVersion = 17.14.36511.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabo", "rabo\rabo.csproj", "{9E6F6398-E771-4D8A-9B84-F5FF812684E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeSchedule", "rabo\CollegeSchedule.csproj", "{9E6F6398-E771-4D8A-9B84-F5FF812684E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

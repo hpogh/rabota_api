@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using rabo.Models;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace rabo.Data
 {
@@ -10,6 +9,7 @@ namespace rabo.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
+
         public DbSet<Building> Buildings => Set<Building>();
         public DbSet<Classroom> Classrooms => Set<Classroom>();
         public DbSet<Teacher> Teachers => Set<Teacher>();
@@ -19,9 +19,11 @@ namespace rabo.Data
         public DbSet<Weekday> Weekdays => Set<Weekday>();
         public DbSet<LessonTime> LessonTimes => Set<LessonTime>();
         public DbSet<Schedule> Schedules => Set<Schedule>();
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             // Индексы для Schedule
             modelBuilder.Entity<Schedule>()
             .HasIndex(s => new {
@@ -31,9 +33,11 @@ namespace rabo.Data
                 s.GroupPart
             })
             .IsUnique();
+
             modelBuilder.Entity<Schedule>()
             .HasIndex(s => new { s.LessonDate, s.LessonTimeId, s.ClassroomId })
             .IsUnique();
+
             // Конвертация enum в string
             modelBuilder.Entity<Schedule>()
             .Property(s => s.GroupPart)

@@ -9,6 +9,7 @@ namespace rabo.Models
         [Key]
         [Column("weekday_id")]
         public int WeekdayId { get; set; }
+
         [Column("name")]
         [Required]
         public string Name { get; set; } = null!;

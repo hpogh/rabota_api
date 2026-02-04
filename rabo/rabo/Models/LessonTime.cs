@@ -9,14 +9,14 @@ namespace rabo.Models
         [Key]
         [Column("lesson_time_id")]
         public int LessonTimeId { get; set; }
+
         [Column("lesson_number")]
         public int LessonNumber { get; set; }
+
         [Column("time_start")]
         public TimeOnly TimeStart { get; set; }
+
         [Column("time_end")]
-        public TimeOnly TimeEnd
-        {
-            get;
-        }
+        public TimeOnly TimeEnd { get; set; }
     }
 }
